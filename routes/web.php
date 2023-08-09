@@ -38,4 +38,5 @@ Route::get('/adminlayout',[PlantNest_Admin::class,'PlantNest_AdminLayout']);
 
 // Login Routes
 Route::get('/login',[login_register::class,'login']);
+Route::get('/register',[login_register::class,'register']);
 Route::post('/register',[login_register::class,'register']);

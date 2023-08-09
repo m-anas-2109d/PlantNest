@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Alazea - Gardening &amp; Landscaping HTML Template</title>
+    <title>Plant Nest</title>
 
     <!-- Favicon -->
     <link rel="icon" href="PlantNest_USER/img/core-img/favicon.ico">
@@ -39,15 +39,15 @@
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <!-- Top Header Content -->
                             <div class="top-header-meta">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: infodeercreative@gmail.com</span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +1 234 122 122</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: techgurus@aptechgdn.net</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +923400154824</span></a>
                             </div>
 
                             <!-- Top Header Content -->
                             <div class="top-header-meta d-flex">
                                 <!-- Language Dropdown -->
                                 <div class="language-dropdown">
-                                    <div class="dropdown">
+                                    <!-- <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle mr-30" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <a class="dropdown-item" href="#">USA</a>
@@ -57,12 +57,19 @@
                                             <a class="dropdown-item" href="#">Spanish</a>
                                             <a class="dropdown-item" href="#">Latin</a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <!-- Login -->
                                 <div class="login">
-                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
+                                    <a href="/login"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
                                 </div>
+
+
+                                <!-- Register -->
+                                <div class="login">
+                                    <a href="/register"><i class="fa fa-user" aria-hidden="true"></i> <span>Register</span></a>
+                                </div>
+
                                 <!-- Cart -->
                                 <div class="cart">
                                     <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">(1)</span></span></a>
@@ -82,7 +89,7 @@
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
-                        <a href="index.html" class="nav-brand"><img src="PlantNest_USER/img/logo.jpeg" alt=""></a>
+                        <a href="index.html" class="nav-brand"><img src="PlantNest_USER/img/logo-removebg-preview.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
