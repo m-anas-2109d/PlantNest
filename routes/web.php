@@ -39,4 +39,12 @@ Route::get('/adminlayout',[PlantNest_Admin::class,'PlantNest_AdminLayout']);
 // Login Routes
 Route::get('/login',[login_register::class,'login']);
 Route::get('/register',[login_register::class,'register']);
-Route::post('/register',[login_register::class,'register']);
+Route::post('/register',[login_register::class,'registerpost']);
+
+Route::post('/loginadminpost',[login_register::class,'loginadminpost']);
+
+
+Route::post("/input", [login_register::class, 'input']);
+Route::get("/student", [login_register::class, 'get_email']);
+Route::get("/code_match", [login_register::class, 'code_match']);
+Route::post("/code_match_", [login_register::class, 'code_match_']);

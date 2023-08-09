@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_registrations', function (Blueprint $table) {
+        Schema::create('temp_verfies', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('password');
-            $table->string('email');
-            $table->integer('contact_no');
-            $table->integer('role');
-            $table->string('profile_image');
+            $table->string('email')->nullable();
+            $table->string('code')->nullable();
+            // $table->integer('password')->nullable();
+            $table->integer("status")->nullable();
+            // $table->date("date_of_complain")->format('dd/mm/yy')->nullable(); 
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_registrations');
+        Schema::dropIfExists('temp_verfies');
     }
 };

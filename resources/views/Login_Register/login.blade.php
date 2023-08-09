@@ -31,8 +31,9 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
             <h2 class="fw-bold mb-5">Login In</h2>
-            <form>
-              <!-- 2 column grid layout with text inputs for the first and last names -->
+            <form action="{{URL:: to ('/loginadminpost')}}" method="POST" id="form">
+              @Csrf
+            <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
@@ -50,13 +51,13 @@
   
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" />
+                <input type="email" id="form3Example3" class="form-control" name="emailinput" Required/>
                 <label class="form-label" for="form3Example3">Email address</label>
               </div>
   
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" />
+                <input type="password" id="form3Example4" class="form-control" name="passwordinput" Required/>
                 <label class="form-label" for="form3Example4">Password</label>
               </div>
   
@@ -65,6 +66,11 @@
               <button type="submit" class="btn btn mb-3" style="background-color:#70c645; color:white;">
                 Sign in
               </button>
+              @if(session('errormessage'))
+              <div class="alert alert-info" role="alert">
+                  <strong>{{(session('errormessage'))}}</strong>
+              </div>
+              @endif
               
   
               <!-- Register buttons -->
