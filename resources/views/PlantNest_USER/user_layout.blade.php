@@ -89,7 +89,7 @@
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
-                        <a href="index.html" class="nav-brand"><img src="PlantNest_USER/img/logo-removebg-preview.png" alt=""></a>
+                        <a href="index.html" class="nav-brand"><img src="PlantNest_USER/img/logplant-removebg-preview.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
