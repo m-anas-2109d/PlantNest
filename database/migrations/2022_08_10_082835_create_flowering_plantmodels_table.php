@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('plants', function (Blueprint $table) {
+        Schema::create('flowering_plantmodels', function (Blueprint $table) {
             $table->id();
-            $table->String('name');
-            $table->String('description','1000');
-            $table->Integer('price');
-            $table->String('plant_genes');
-            $table->String('image');
+            $table->String("name");
+            $table->String("description",'1000');
+            $table->String("price");
+            $table->String("quantity");
+            $table->String("image");
+            $table->String("plant_genes")->nullable();
             $table->unsignedBigInteger("categories_id")->index(); 
             $table->foreign("categories_id")->on("categories")->references("id")->onUpdate('cascade')->onDelete('cascade');
-
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('plants');
+        Schema::dropIfExists('flowering_plantmodels');
     }
 };

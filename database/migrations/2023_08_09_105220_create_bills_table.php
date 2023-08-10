@@ -16,12 +16,12 @@ return new class extends Migration
             $table->String('quantity');
             $table->String('unit_price');
             $table->String('total_price');
-            $table->unsignedBigInteger("accessories_id")->index(); 
-            $table->foreign("accessories_id")->on("accessories")->references("id")->onUpdate('cascade')->onDelete('cascade');
+            // $table->unsignedBigInteger("accessories_id")->index(); 
+            // $table->foreign("accessories_id")->on("accessories")->references("id")->onUpdate('cascade')->onDelete('cascade');
 
 
-            $table->unsignedBigInteger("plants_id")->index(); 
-            $table->foreign("plants_id")->on("plants")->references("id")->onUpdate('cascade')->onDelete('cascade');
+            // $table->unsignedBigInteger("plants_id")->index(); 
+            // $table->foreign("plants_id")->on("plants")->references("id")->onUpdate('cascade')->onDelete('cascade');
 
 
             $table->unsignedBigInteger("orders_id")->index(); 

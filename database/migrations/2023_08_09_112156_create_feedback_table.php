@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->String("name");
             $table->String("email");
+            $table->biginteger("phone");
             $table->String("feedback");
 
             $table->timestamps();

@@ -6,7 +6,7 @@
 <head>
         
         <!-- Title -->
-        <title>Modern | Mailbox - Inbox</title>
+        <title>@yield('title2')</title>
         
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta charset="UTF-8">
@@ -48,14 +48,14 @@
         <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s1">
             <h3><span class="pull-left">Chat</span><a href="javascript:void(0);" class="pull-right" id="closeRight"><i class="fa fa-times"></i></a></h3>
             <div class="slimscroll">
-                <a href="javascript:void(0);" class="showRight2"><img src="PlantNest_admin/assets/images/avatar2.png" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="PlantNest_admin/assets/images/avatar3.png" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="PlantNest_admin/assets/images/avatar4.png" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="PlantNest_admin/assets/images/avatar5.png" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="PlantNest_admin/assets/images/avatar2.png" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="PlantNest_admin/assets/images/avatar3.png" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="PlantNest_admin/assets/images/avatar4.png" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
-                <a href="javascript:void(0);" class="showRight2"><img src="PlantNest_admin/assets/images/avatar5.png" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="../PlantNest_admin/assets/images/avatar2.png" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="../PlantNest_admin/assets/images/avatar3.png" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="../PlantNest_admin/assets/images/avatar4.png" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="../PlantNest_admin/assets/images/avatar5.png" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="../PlantNest_admin/assets/images/avatar2.png" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="../PlantNest_admin/assets/images/avatar3.png" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="../PlantNest_admin/assets/images/avatar4.png" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
+                <a href="javascript:void(0);" class="showRight2"><img src="../PlantNest_admin/assets/images/avatar5.png" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
             </div>
 		</nav>
         <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
@@ -63,7 +63,7 @@
             <div class="slimscroll chat">
                 <div class="chat-item chat-item-left">
                     <div class="chat-image">
-                        <img src="PlantNest_admin/assets/images/avatar2.png" alt="">
+                        <img src="../PlantNest_admin/assets/images/avatar2.png" alt="">
                     </div>
                     <div class="chat-message">
                         Hi There!
@@ -76,7 +76,7 @@
                 </div>
                 <div class="chat-item chat-item-left">
                     <div class="chat-image">
-                        <img src="PlantNest_admin/assets/images/avatar2.png" alt="">
+                        <img src="../PlantNest_admin/assets/images/avatar2.png" alt="">
                     </div>
                     <div class="chat-message">
                         Fine! do you like my project?
@@ -89,7 +89,7 @@
                 </div>
                 <div class="chat-item chat-item-left">
                     <div class="chat-image">
-                        <img src="PlantNest_admin/assets/images/avatar2.png" alt="">
+                        <img src="../PlantNest_admin/assets/images/avatar2.png" alt="">
                     </div>
                     <div class="chat-message">
                         Thanks, I tried!
@@ -109,7 +109,7 @@
 		</nav>
         <div class="menu-wrap">
             <nav class="profile-menu">
-                <div class="profile"><img src="PlantNest_admin/assets/images/profile-menu-image.png" width="60" alt="David Green"/><span>David Green</span></div>
+                <div class="profile"><img src="../PlantNest_admin/assets/images/profile-menu-image.png" width="60" alt="David Green"/><span>David Green</span></div>
                 <div class="profile-menu-list">
                     <a href="#"><i class="fa fa-star"></i><span>Favorites</span></a>
                     <a href="#"><i class="fa fa-bell"></i><span>Alerts</span></a>
@@ -243,7 +243,7 @@
                                             <ul class="list-unstyled">
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="PlantNest_admin/assets/images/avatar2.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="../PlantNest_admin/assets/images/avatar2.png" alt=""></div>
                                                         <p class="msg-name">Sandra Smith</p>
                                                         <p class="msg-text">Hey ! I'm working on your project</p>
                                                         <p class="msg-time">3 minutes ago</p>
@@ -251,7 +251,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="PlantNest_admin/assets/images/avatar4.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="../PlantNest_admin/assets/images/avatar4.png" alt=""></div>
                                                         <p class="msg-name">Amily Lee</p>
                                                         <p class="msg-text">Hi David !</p>
                                                         <p class="msg-time">8 minutes ago</p>
@@ -259,7 +259,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="PlantNest_admin/assets/images/avatar3.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="../PlantNest_admin/assets/images/avatar3.png" alt=""></div>
                                                         <p class="msg-name">Christopher Palmer</p>
                                                         <p class="msg-text">See you soon !</p>
                                                         <p class="msg-time">56 minutes ago</p>
@@ -267,7 +267,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="PlantNest_admin/assets/images/avatar5.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="../PlantNest_admin/assets/images/avatar5.png" alt=""></div>
                                                         <p class="msg-name">Nick Doe</p>
                                                         <p class="msg-text">Nice to meet you</p>
                                                         <p class="msg-time">2 hours ago</p>
@@ -275,7 +275,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="PlantNest_admin/assets/images/avatar2.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online on"></div><img class="img-circle" src="../PlantNest_admin/assets/images/avatar2.png" alt=""></div>
                                                         <p class="msg-name">Sandra Smith</p>
                                                         <p class="msg-text">Hey ! I'm working on your project</p>
                                                         <p class="msg-time">5 hours ago</p>
@@ -283,7 +283,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="PlantNest_admin/assets/images/avatar4.png" alt=""></div>
+                                                        <div class="msg-img"><div class="online off"></div><img class="img-circle" src="../PlantNest_admin/assets/images/avatar4.png" alt=""></div>
                                                         <p class="msg-name">Amily Lee</p>
                                                         <p class="msg-text">Hi David !</p>
                                                         <p class="msg-time">9 hours ago</p>
@@ -328,8 +328,8 @@
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
-                                        <span class="user-name">David<i class="fa fa-angle-down"></i></span>
-                                        <img class="img-circle avatar" src="PlantNest_admin/assets/images/avatar1.png" width="40" height="40" alt="">
+                                        <span class="user-name">{{session('sessionusername')}}<i class="fa fa-angle-down"></i></span>
+                                        <img class="img-circle avatar" src="../PlantNest_admin/assets/images/avatar1.png" width="40" height="40" alt="">
                                     </a>
                                     <ul class="dropdown-menu dropdown-list" role="menu">
                                         <li role="presentation"><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
@@ -337,19 +337,11 @@
                                         <li role="presentation"><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">4</span></a></li>
                                         <li role="presentation" class="divider"></li>
                                         <li role="presentation"><a href="lock-screen.html"><i class="fa fa-lock"></i>Lock screen</a></li>
-                                        <li role="presentation"><a href="login.html"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
+                                        <li role="presentation">                                            <a class="dropdown-item" href="/logout"><i class="fa fa-sign-out m-r-xs"></i>Logout</a>
+</li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="login.html" class="log-out waves-effect waves-button waves-classic">
-                                        <span><i class="fa fa-sign-out m-r-xs"></i>Log out</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic" id="showRight">
-                                        <i class="fa fa-comments"></i>
-                                    </a>
-                                </li>
+                            
                             </ul><!-- Nav -->
                         </div><!-- Top Menu -->
                     </div>
@@ -361,7 +353,7 @@
                         <div class="sidebar-profile">
                             <a href="javascript:void(0);" id="profile-menu-link">
                                 <div class="sidebar-profile-image">
-                                    <img src="PlantNest_admin/assets/images/profile-menu-image.png" class="img-circle img-responsive" alt="">
+                                    <img src="../PlantNest_admin/assets/images/profile-menu-image.png" class="img-circle img-responsive" alt="">
                                 </div>
                                 <div class="sidebar-profile-details">
                                     <span>David Green<br><small>Art Director</small></span>
@@ -493,6 +485,17 @@
                     </ul>
                 </div><!-- Page Sidebar Inner -->
             </div><!-- Page Sidebar -->
+
+           
+
+            <div class="page-inner">
+                
+                <div id="main-wrapper">
+   
+                @yield('content')    
+                    
+                </div>
+            </div><!-- Main Wrapper -->
 
             <div class="page-footer">
                     <p class="no-s">2015 &copy; Modern by Steelcoders.</p>
