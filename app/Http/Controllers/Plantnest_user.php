@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\user_registration;
 use Illuminate\Http\Request;
+use App\Models\temp_verfy;
 
 class Plantnest_user extends Controller
 {
@@ -62,6 +63,17 @@ class Plantnest_user extends Controller
         $image->move('images/', $ext);
         $profile->profile_image = $ext;
         $profile->save();
+
+
+        // Update profile
+        $temp_profile = temp_verfy::where("email", session('sessionuseremail'))->first();
+        $temp_profile->first_name = $req->first_name;
+        $temp_profile->last_name = $req->last_name;
+        $temp_profile->contact_no = $req->contact_no;
+        $temp_profile->password = $req->password;
+        $temp_profile->profile_image = $ext;
+        $temp_profile->save();
+
 
         return redirect()->back()->with("updatesuccesscomp", "Data has been updated");
     }
