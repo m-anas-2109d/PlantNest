@@ -25,6 +25,7 @@
     /* background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1)) */
 }
 
+
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -35,7 +36,6 @@
     position: absolute;
     width: 1px;
 }
-
 
 </style>
 
@@ -60,13 +60,14 @@
                                 <br><br>
                                 <img src="images/{{$pf->profile_image}}" alt="Avatar" id="outImg" class="img-fluid "
                                     style="width: 80px;" />
-                                <!-- <input type="file"  name="image" value="" class="imageinput p-2 mt-3"
-                                    onchange="onFileSelected(event)" style="color:#70c745;" value=""> -->
+                                <!-- <input type="file"  name="image" class="imageinput p-2 mt-3"
+                                    onchange="onFileSelected(event)" style="color:#70c745;" value="Select an Image"> -->
 
-                                    <input type="file" name="file" id="file-input" class="visuallyhidden" onchange="onFileSelected(event)" >
-                                    <!-- <a href="#" class="file-upload">File upload</a> -->
-                                    <br><br>
-                                    <button class="file-upload btn btn">Image uplaod</button>
+                                    <input type="file" name="image" id="file-input" class="visuallyhidden" onchange="onFileSelected(event)">
+<!-- <a href="#" class="file-upload">File upload</a> --><br><br>
+<button class="file-upload btn btn">Image upload</button>
+
+
 
 
                                 <!-- <h5 style="color:white;">{{$pf->first_name}}</h5> -->
@@ -154,9 +155,11 @@ function onFileSelected(event) {
     reader.readAsDataURL(selectedFile);
 }
 
+
 $('.file-upload').on('click', function(e) {
   e.preventDefault();
   $('#file-input').trigger('click');
 });
+
 </script>
 @endsection

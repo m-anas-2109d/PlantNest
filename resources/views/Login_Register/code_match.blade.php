@@ -65,32 +65,28 @@
     }
     </style>
 
-    <body style="background-color:#d3d3d3;">
-        <div class="container-fluid">
+    <body style="background-color:#f2f4f5; overflow: hidden;">
+        
+        <div class="container-fluid ">
             <div class="row">
-                <div class="col-md-6 image p-0" id="image"><br><br><br>
-                    <img src="https://coffee-code.tech/wp-content/uploads/2022/06/fabricasoftware.png" height="80%"
-                        width="96%" alt="">
-                </div>
-                <div class="col-md-6 text-center"
-                    style="border:2px solid black; height:700px; background-color:#d3d3d3;">
+            
+                <div class="col-md-12 text-center"
+                    style="height:700px; background-color:#f2f4f5; ">
+                    <center>
                     <form action="{{URL:: to('/code_match_')}}" method="POST">
                         @csrf
                         <br>
                         <?php
 
-		                $user =DB::table("temp_verfies")->where("email",  $f->email)->first();
-		
-
-?>
+                        $user =DB::table("temp_verfies")->where("email",  $f->email)->first();?>
                         <div><br><br><br><br><br>
-                            <img src="https://www.mendix.com/wp-content/uploads/low-code-guide-pro-dev.png" alt=""
-                                style="height:17rem; width:32rem;">
+                            <img src="PlantNest_USER/img/logplant-removebg-preview.png" alt=""
+                                >
                             <br><br>
                             <label class="mt-3" for="frm-login-uname"
-                                style="font-weight:bold; color:black; font-size:2.5rem; margin-right:15px; color:#F7B205;">Email</label><br>
+                                style="font-weight:bold; color:black; font-size:2.5rem; margin-right:15px; margin-bottom:-100px; color:#74c644;">Email</label><br>
                             <input class="" type="text" id="frm-login-uname" name="emailinput" value="{{$user->email}}"
-                                style="border:2px solid black;font-weight:bold; width:38rem; border-radius:2rem; height:5rem;"
+                                style="border:2px solid black;font-weight:bold; width:38rem; border-radius:1rem; height:5rem;"
                                 readonly>
                         </div>
                         <div>
@@ -109,7 +105,7 @@
 
                             </html>
                             <label for="frm-login-uname"
-                                style="font-weight:bold; color:black; font-size:1.6rem; color:#F7B205;">Please Enter
+                                style="font-weight:bold; color:black; font-size:1.6rem; color:#74c644;">Please Enter
                                 Verification code sent to email address</label><br>
                             <br>
                             <div class="row">
@@ -162,12 +158,13 @@
                             </div>
                             <!-- <input placeholder="Verification code sent to email address" type="text" id="frm-login-uname" name="code" style="border:2px solid black; color:black; font-weight:bold; width:41rem;"> -->
                         </div>
+                        </center>
                         <br>
                         <div class="row">
                             <div class="col-md-4"></div>
-                            <div class="col-md-4">
+                            <div class="col-md-4"><br>
                                 <button class="btn btn-primary" type="submit"
-                                    style="width:18rem;  background-color:#F7B205; font-weight:bold; height:4.5rem; width:15rem; border-radius:2rem; color:white; font-size:2rem;">Verify</button>
+                                    style="width:18rem;  background-color:#74c644; font-weight:bold; height:4.5rem; width:15rem; border-radius:2rem; color:white; font-size:2rem;">Verify</button>
                                 <!-- <input type="submit" value="Verify" style="color:black; font-weight:bold; height:5rem; width:18rem; background-color:white; border-radius:2rem;"/> -->
                             </div>
                         </div>
@@ -179,6 +176,7 @@
                     </form>
                     <br><br>
                 </div>
+                
             </div>
             @if(session()->has('register'))
             <div class="alert alert-success">
@@ -187,6 +185,7 @@
             @endif
 
         </div>
+
         <script>
         function clickEvent(first, last) {
             if (first.value.length) {

@@ -16,7 +16,7 @@
 <section class="text-center">
     <!-- Background image -->
     <div class="p-5 bg-image" style="
-          background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+          background-image: url(PlantNest_USER/img/bg-img/24.jpg);
           height: 300px;
           "></div>
     <!-- Background image -->
@@ -30,59 +30,58 @@
   
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
+          <img src="PlantNest_USER/img/logplant-removebg-preview.png" alt="" style="margin-bottom:20px;">
             <h2 class="fw-bold mb-5">Sign up now</h2>
-            <form action="{{URL:: to ('/input')}}" method="POST" id="form" enctype="multipart/form-data">
+            <form action="{{URL:: to ('/input')}}" method="POST" id="form">
               @csrf
-                
-              <input type="file" name="image" class="imageinput p-2" onchange="onFileSelected(event)"
-              style="height:2.7rem; width:19rem; border-color: #189AB4; border-bottom-width: 2px;">
-
             <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="text" id="form3Example1" class="form-control" name="first_name"/>
-                    <label class="form-label" for="form3Example1">First name</label>
+                    <input type="text" id="form3Example1" class="form-control" name="first_name" placeholder="First name" />
+                    
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input type="text" id="form3Example2" class="form-control" name="last_name"/>
-                    <label class="form-label" for="form3Example2">Last name</label>
+                    <input type="text" id="form3Example2" class="form-control" placeholder="Last name" name="last_name"/>
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                  <input type="email" id="form3Example3" class="form-control" placeholder="Email address" name="emailinput"/>
+                    
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                  <input type="text" id="form3Example3" class="form-control" placeholder="Contact No" name="contact"/>
+                    
                   </div>
                 </div>
               </div>
   
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" name="emailinput"/>
-                <label class="form-label" for="form3Example3">Email address</label>
-              </div>
-
-
-               <!-- Email input -->
-               <div class="form-outline mb-4">
-                <input type="text" id="form3Example3" class="form-control" name="contact"/>
-                <label class="form-label" for="form3Example3">Contact No</label>
-              </div>
-
-
+              
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" name="passwordinput" />
-                <label class="form-label" for="form3Example4">Password</label>
+                <input type="password" id="form3Example4" placeholder="Password" class="form-control" name="passwordinput" />
+                
               </div>
 
               <div class="form-outline flex-fill mb-0">
                 <input type="password" id="form3Example4c" class="form-control"
-                    name="coninput" style="border: 1px solid gray;" required />
-                <label class="form-label" for="form3Example4c"
-                    style="font-weight:bold;">Confirm Password</label>
+                   placeholder="Confirm Password" name="coninput" style="border: 1px solid gray;" required />
+                
             </div>
 
   
               <!-- Submit button -->
-              <button type="submit" class="btn btn mb-2" style="background-color:#70c645; color:white;">
+              <button type="submit" class="btn btn mb-2 btn-block" style="margin-top: 20px; background-color:#70c645; color:white;">
                 Sign up
               </button>
   

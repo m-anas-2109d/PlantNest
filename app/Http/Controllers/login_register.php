@@ -320,4 +320,50 @@ class login_register extends Controller
         return redirect("/");
     }
 
+    // forget password 
+
+    public function forgetpassword()
+    {
+        $fetch = temp_verfy::all();
+        return view("Login_Register.forgetpassword",compact('fetch'));
+    }
+
+    public function forgetpassword_(Request $req)
+    {
+        $v_code =  $this->generateUniqueCode();
+        $user = user_registration::where('email',$req->emailinput)->first();
+        
+       if(isset($req->emailinput))
+       {
+           if(isset($user))
+           {
+            $fetch = temp_verfy::all();
+
+                 $data= ['data'=> $user->email , 'code'=>$v_code]; 
+                //$data= Auth::User()->name;
+                $user ['to'] = $user->email;    
+                Mail::send('Login_Register.email_user_forg',$data ,function($messages) use ($user)
+                {
+                    $messages->to($user ['to']);
+                    $messages->subject('Forgot Passwword Code for Online Varsity');
+                });
+                $fuser = temp_verfy::where('email',$req->emailinput)->first();
+                $fuser->code = $v_code; 
+                $fuser->status = 8;  
+                $fuser->update();
+                return view("Login_Register.code_match",compact('fetch'));
+            }else{
+                echo "<script>alert('Invalid Email Address.')
+                window.location.href='/forgetpassword'
+                </script>";
+            }
+       }
+       else{
+        echo "<script>alert('Please Provide Email Addresss to Continue.')
+            </script>";
+
+       }
+        
+    }
+
 }
