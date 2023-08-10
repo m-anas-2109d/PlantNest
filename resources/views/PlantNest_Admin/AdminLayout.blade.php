@@ -136,7 +136,8 @@
                         </a>
                     </div>
                     <div class="logo-box">
-                        <a href="index.html" class="logo-text"><span>Modern</span></a>
+                    <a href="index.html" class="nav-brand "><img
+                                src="PlantNest_USER/img/logplant-removebg-preview.png" alt="" style="width:150px; margin-top:9px; margin-left:9px;"></a>
                     </div><!-- Logo Box -->
                     <div class="search-button">
                         <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
@@ -375,42 +376,10 @@
                                 <li><a href="compose-alt.html">Compose Alt</a></li>
                             </ul>
                         </li>
-                        
-                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-briefcase"></span><p>UI Kits</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
-                                <li><a href="ui-alerts.html">Alerts</a></li>
-                                <li><a href="ui-buttons.html">Buttons</a></li>
-                                <li><a href="ui-icons.html">Icons</a></li>
-                                <li><a href="ui-typography.html">Typography</a></li>
-                                <li><a href="ui-notifications.html">Notifications</a></li>
-                                <li><a href="ui-grid.html">Grid</a></li>
-                                <li><a href="ui-tabs-accordions.html">Tabs &amp; Accordions</a></li>
-                                <li><a href="ui-modals.html">Modals</a></li>
-                                <li><a href="ui-panels.html">Panels</a></li>
-                                <li><a href="ui-progress.html">Progress Bars</a></li>
-                                <li><a href="ui-sliders.html">Sliders</a></li>
-                                <li><a href="ui-nestable.html">Nestable</a></li>
-                                <li><a href="ui-tree-view.html">Tree View</a></li>
-                            </ul>
-                        </li>
-                        <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-th"></span><p>Layouts</p><span class="arrow"></span></a>
-                            <ul class="sub-menu">
-                                <li><a href="layout-blank.html">Blank Page</a></li>
-                                <li><a href="layout-boxed.html">Boxed Page</a></li>
-                                <li><a href="layout-horizontal-menu.html">Horizontal Menu</a></li>
-                                <li><a href="layout-horizontal-menu-boxed.html">Boxed &amp; Horizontal Menu</a></li>
-                                <li><a href="layout-horizontal-menu-minimal.html">Horizontal Menu Minimal</a></li>
-                                <li><a href="layout-fixed-sidebar.html">Fixed Sidebar</a></li>
-                                <li><a href="layout-static-header.html">Static Header</a></li>
-                                <li><a href="layout-collapsed-sidebar.html">Collapsed Sidebar</a></li>
-                                <li><a href="layout-compact-menu.html">Compact Menu</a></li>
-                                <li><a href="layout-hover-menu.html">Hover Menu</a></li>
-                            </ul>
-                        </li>
                         <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-list"></span><p>Tables</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
-                                <li><a href="table-static.html">Static Tables</a></li>
-                                <li><a href="table-responsive.html">Responsive Tables</a></li>
+                                <li><a href="/fetchcategory">Categeroies</a></li>
+                                <li><a href="/fetchplant_1">Products</a></li>
                                 <li><a href="table-data.html">Data Tables</a></li>
                             </ul>
                         </li>
