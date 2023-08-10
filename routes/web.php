@@ -50,3 +50,6 @@ Route::get("/code_match", [login_register::class, 'code_match']);
 Route::post("/code_match_", [login_register::class, 'code_match_']);
 
 Route::get("/logout", [login_register::class,'logout']);
+Route::get("/profile", [Plantnest_user::class,'profile']);
+
+Route::post('/update_company/{id}', [Plantnest_user::class, 'get_data_update']);

@@ -200,8 +200,10 @@ class login_register extends Controller
                 $user->contact_no = $logins->contact_no;
 
                 $user->password = $logins->password;
-                // $user->password = $req->password;
                 $user->role = 0;
+
+                $user->profile_image = $logins->profile_image;
+                // $user->password = $req->password;
                 $user->save();
 
                 // echo "Registerd";
@@ -274,6 +276,12 @@ class login_register extends Controller
 
             $studcheck->contact_no = $res->contact;
             $studcheck->code = $v_code;
+
+            $image = $res->file('image');
+            $ext = rand() . "." . $image->getClientOriginalName();
+            $image->move('images/', $ext);
+            $studcheck->profile_image = $ext;
+
             $studcheck->save();
 
             try
