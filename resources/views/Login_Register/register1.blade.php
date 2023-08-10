@@ -16,7 +16,7 @@
 <section class="text-center">
     <!-- Background image -->
     <div class="p-5 bg-image" style="
-          background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+          background-image: url('PlantNest_USER/img/bg-img/24.jpg');
           height: 300px;
           "></div>
     <!-- Background image -->
@@ -31,7 +31,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
             <h2 class="fw-bold mb-5">Sign up now</h2>
-            <form action="{{URL:: to ('/input')}}" method="POST" id="form">
+            <form action="{{URL:: to ('/register')}}" method="POST" id="form">
               @csrf
             <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
@@ -51,7 +51,7 @@
   
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" name="emailinput"/>
+                <input type="email" id="form3Example3" class="form-control" name="email"/>
                 <label class="form-label" for="form3Example3">Email address</label>
               </div>
 

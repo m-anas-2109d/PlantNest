@@ -39,8 +39,12 @@
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <!-- Top Header Content -->
                             <div class="top-header-meta">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: techgurus@aptechgdn.net</span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +923400154824</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom"
+                                    title="infodeercreative@gmail.com"><i class="fa fa-envelope-o"
+                                        aria-hidden="true"></i> <span>Email: techgurus@aptechgdn.net</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i
+                                        class="fa fa-phone" aria-hidden="true"></i> <span>Call Us:
+                                        +923400154824</span></a>
                             </div>
 
                             <!-- Top Header Content -->
@@ -60,19 +64,47 @@
                                     </div> -->
                                 </div>
                                 <!-- Login -->
+
+                                <?php
+
+		                $user =DB::table("user_registrations")->where("email",  (session('sessionuseremail')))->first();
+		
+
+                                                ?>
+
+                                @if(session('sessionuseremail'))
+                                <!-- <a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>{{session('sessionusername')}}</span></a> -->
+
+                                <div class="language-dropdown">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle mr-30" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">{{$user->first_name}}</button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Profile</a>
+                                            <a class="dropdown-item" href="/logout">Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @else
+
                                 <div class="login">
-                                    <a href="/login"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
+                                    <a href="/login"><i class="fa fa-user" aria-hidden="true"></i>
+                                        <span>Login</span></a>
                                 </div>
 
 
                                 <!-- Register -->
                                 <div class="login">
-                                    <a href="/register"><i class="fa fa-user" aria-hidden="true"></i> <span>Register</span></a>
+                                    <a href="/register"><i class="fa fa-user" aria-hidden="true"></i>
+                                        <span>Register</span></a>
                                 </div>
 
+                                @endif
                                 <!-- Cart -->
                                 <div class="cart">
-                                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span class="cart-quantity">(1)</span></span></a>
+                                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart <span
+                                                class="cart-quantity">(1)</span></span></a>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +121,8 @@
                     <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                         <!-- Nav Brand -->
-                        <a href="index.html" class="nav-brand"><img src="PlantNest_USER/img/logplant-removebg-preview.png" alt=""></a>
+                        <a href="index.html" class="nav-brand"><img
+                                src="PlantNest_USER/img/logplant-removebg-preview.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -154,7 +187,8 @@
                     <!-- Search Form -->
                     <div class="search-form">
                         <form action="#" method="get">
-                            <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+                            <input type="search" name="search" id="search"
+                                placeholder="Type keywords &amp; press enter...">
                             <button type="submit" class="d-none"></button>
                         </form>
                         <!-- Close Icon -->
@@ -166,11 +200,11 @@
     </header>
     <!-- ##### Header Area End ##### -->
 
-    
+
 
     @yield('dashboard')
-      <!-- ##### Footer Area Start ##### -->
-      <footer class="footer-area bg-img" style="background-image: url(PlantNest_user/img/bg-img/3.jpg);">
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area bg-img" style="background-image: url(PlantNest_user/img/bg-img/3.jpg);">
         <!-- Main Footer Area -->
         <div class="main-footer-area">
             <div class="container">
@@ -277,10 +311,15 @@
                     <!-- Copywrite Text -->
                     <div class="col-12 col-md-6">
                         <div class="copywrite-text">
-                            <p>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
+                            <p>&copy;
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                                </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                    aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                    target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
                         </div>
                     </div>
                     <!-- Footer Nav -->
@@ -304,7 +343,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </footer>
     <!-- ##### Footer Area End ##### -->
 
-        <!-- ##### Footer Area End ##### -->
+    <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->

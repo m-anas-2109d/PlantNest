@@ -52,6 +52,8 @@ class login_register extends Controller
 
                 session(["sessionid" => $login->id]);
                 session(["sessionuseremail" => $login->email]);
+                session(["sessionusername" => $login->first_name]);
+
                 return redirect("/adminlayout");
 
 
@@ -59,11 +61,11 @@ class login_register extends Controller
             else if ($login->role == "0") {
                 session(["sessionid" => $login->id]);
                 session(["sessionuseremail" => $login->email]);
-                session(["sessionusername" => $login->name]);
+                session(["sessionusername" => $login->first_name]);
 
-                return redirect("/");
+                // return redirect("/");
 
-                //  return view("dashboard_" ,compact('count_bat','Complain_Master','count1','count','fetchprevious','fetch','software','Network' ,'fetchtoday'));
+                 return view("PlantNest_USER.user_index");
             }
 
         } else {
@@ -80,7 +82,7 @@ class login_register extends Controller
         // $studcheck =DB::table("students")->where("student_email", $email)->first();
         $user = user_registration::where("email", $email)->first();  
 
-        $login = temp_verfy::where("email", $email)->first();
+        $login = temp_verfy::where("email", session('sessionuseremail'))->first();
         // $login2 =DB::table("students")->where("Student_email", $email)->first();
         $pass =$req->passwordinput;
         $conpass =$req->coninput;
@@ -97,18 +99,18 @@ class login_register extends Controller
             if($pass == $conpass)
             {   
                 session(["sessionuseremail"=>$email]);
-                // session(["sessionusername"=>$login->first_name]);
+                session(["sessionusername"=>$login->first_name]);
     
                 //forgot 
-                if($login->status ==8)
-                { 
+                // if($login->status ==8)
+                // { 
 
-                    $user = user_registration::where("email", $email)->first();  
-                    $user->password = $req->passwordinput;
-                    $user->update();
-                }
-                else
-                { 
+                //     $user = user_registration::where("email", $email)->first();  
+                //     $user->password = $req->passwordinput;
+                //     $user->update();
+                // }
+                // else
+                // { 
                     // .....
 
                     $user = user_registration::where("email", $email)->first();  
@@ -120,13 +122,16 @@ class login_register extends Controller
                     }
                     else
                     {
-                        $user = new user_registration();
-                        $user->first_name = $req->first_name;    
-                        $user->last_name = $req->last_name;
-                        $user->email = $req->email;
-                        $user->contact_no = $req->contact;
+                        $logins = temp_verfy::where("email", $email)->first();
 
-                        $user->password = $req->passwordinput;
+
+                        $user = new user_registration();
+                        $user->first_name = $logins->first_name;    
+                        $user->last_name = $logins->last_name;
+                        $user->email = $logins->email;
+                        $user->contact_no = $logins->contact_no;
+
+                        $user->password = $logins->passwordinput;
                         // $user->password = $req->password;
                         $user->role = 0;
                         $user->save();
@@ -150,14 +155,14 @@ class login_register extends Controller
                 return redirect('/');
                 // return view("/" ,compact( 'fetch','lab','hardware','software','Network','announcement','attendances','student_data'));
 
-            }
-            else
-            {   
-                echo 
-                "<script>alert('Password and Confirm password does not match.')
-                window.location.href='/register'
-                </script>";
-            }                
+            // }
+            // else
+            // {   
+            //     echo 
+            //     "<script>alert('Password and Confirm password does not match.')
+            //     window.location.href='/register'
+            //     </script>";
+            // }                
         } 
 
     }
@@ -187,8 +192,11 @@ class login_register extends Controller
 
         //$studcheck =DB::table("students")->where("Student_email", $email)->first();
         //$req->emailinput;
+        $user = user_registration::where("email", $email)->first();  
 
         $login = temp_verfy::where("email", $email)->first();
+        $logins = temp_verfy::where("email", $email)->first();
+
         $code_check = $req->code;
         $user =DB::table("temp_verfies")->where("email", $email)->first();
         // $login2 =DB::table("students")->where("Student_email", $email)->first();
@@ -198,12 +206,37 @@ class login_register extends Controller
         if(isset($codes))
         { 
         session(["sessionuseremail"=>$user->email]);
+        session(["sessionusername" => $login->first_name]);
 
             if($codes   ==  $login->code)                    
             {
+               
+
+
+                $user = new user_registration();
+                $user->first_name = $logins->first_name;    
+                $user->last_name = $logins->last_name;
+                $user->email = $logins->email;
+                $user->contact_no = $logins->contact_no;
+
+                $user->password = $logins->password;
+                // $user->password = $req->password;
+                $user->role = 0;
+                $user->save();
+
+                 // echo "Registerd";
+                $data= ['Std_Name'=> $user->first_name ,'data'=> $user->email]; 
+                $user ['to'] = $user->email;  
+
+                Mail::send('Login_Register.email_register',$data ,function($messages) use ($user)
+                {
+                    $messages->to($user ['to']);
+                    $messages->subject('User Registration Completed!');
+                }); 
+
                 $fetch = temp_verfy::all();
                 echo "<script>alert('Verfication Code Match.')
-                window.location.href='/register'
+                window.location.href='/'
                 </script>";
             }
             else
@@ -258,13 +291,18 @@ public function code_match(Request $res)
             if(isset($user))
             {
                 echo "<script>alert('Email Already Exists.')
-                window.location.href='/student_login'
+                window.location.href='/login'
                 </script>";
             }
             else
             {
                 $studcheck = new temp_verfy();
                 $studcheck->email = $get_Email;
+                $studcheck->first_name = $res->first_name;    
+                $studcheck->last_name = $res->last_name;
+                $studcheck->password = $res->passwordinput;
+
+                $studcheck->contact_no = $res->contact;
                 $studcheck->code = $v_code;
                 $studcheck->save();
                 
@@ -298,6 +336,16 @@ public function code_match(Request $res)
         //     </script>";
         // }
         
+    }
+
+
+    // logout
+
+    public function logout()
+
+    {
+        session()->forget("sessionuseremail");
+        return redirect("/");
     }
 
 
