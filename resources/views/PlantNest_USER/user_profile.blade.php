@@ -36,7 +36,6 @@
     position: absolute;
     width: 1px;
 }
-
 </style>
 
 
@@ -63,9 +62,10 @@
                                 <!-- <input type="file"  name="image" class="imageinput p-2 mt-3"
                                     onchange="onFileSelected(event)" style="color:#70c745;" value="Select an Image"> -->
 
-                                    <input type="file" name="image" id="file-input" class="visuallyhidden" onchange="onFileSelected(event)">
-<!-- <a href="#" class="file-upload">File upload</a> --><br><br>
-<button class="file-upload btn btn">Image upload</button>
+                                <input type="file" name="image" id="file-input" class="visuallyhidden"
+                                    onchange="onFileSelected(event)">
+                                <!-- <a href="#" class="file-upload">File upload</a> --><br><br>
+                                <button class="file-upload btn btn">Image upload</button>
 
 
 
@@ -106,7 +106,7 @@
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
                                             <!-- <p class="text-muted">{{$pf->password}}</p> -->
-                                            <input type="text" placeholder="Enter Company Name" name="password"
+                                            <input type="password" placeholder="Enter Company Name" name="password"
                                                 class="form-control input-sm" value="{{$pf['password']}}">
                                         </div>
 
@@ -157,9 +157,8 @@ function onFileSelected(event) {
 
 
 $('.file-upload').on('click', function(e) {
-  e.preventDefault();
-  $('#file-input').trigger('click');
+    e.preventDefault();
+    $('#file-input').trigger('click');
 });
-
 </script>
 @endsection

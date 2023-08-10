@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\temp_verfy;
 use App\Models\user_registration;
 use DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Mail;
-
+// use hash;
 class login_register extends Controller
 {
     public function login()
@@ -21,56 +22,46 @@ class login_register extends Controller
     }
 
     // login post
+
     public function loginadminpost(Request $req)
     {
         $email = $req->emailinput;
         $password = $req->passwordinput;
-        $userid = session('sessionuseremail');
-
-        $login = DB::table("user_registrations")->where(["email" => $email, "password" => $password])->first();
-        $userid = session('sessionuseremail');
-
-        if ($login != "") {
+    
+        $login = DB::table("user_registrations")->where("email", $email)->first();
+    
+        if ($login && Hash::check($password, $login->password)) {
+            // Password matches, proceed with login
+    
             if (isset($email)) {
-
                 $systemcheck = user_registration::where('email', $email)->first();
-
-                if (isset($systemcheck)) {
-                    ;
-                } else {
+    
+                if (!isset($systemcheck)) {
                     $systemcheck = new user_registration();
                     $systemcheck->email = $email;
                     $systemcheck->save();
                 }
             }
-
+    
             if ($login->role == "1") {
-                $email = $req->emailinput;
-                $password = $req->passwordinput;
-                $adm = user_registration::where(["email" => $email, "password" => $password])->get();
-                $user = user_registration::where("email", $email)->first();
-
                 session(["sessionid" => $login->id]);
                 session(["sessionuseremail" => $login->email]);
                 session(["sessionusername" => $login->first_name]);
-
+    
                 return redirect("/adminlayout");
-
             } else if ($login->role == "0") {
                 session(["sessionid" => $login->id]);
                 session(["sessionuseremail" => $login->email]);
                 session(["sessionusername" => $login->first_name]);
-
-                // return redirect("/");
-
+    
                 return view("PlantNest_USER.user_index");
             }
-
         } else {
-            return redirect()->back()->with("errormessage", "Record Not Found");
-
+            // Password doesn't match or user not found
+            return redirect()->back()->with("errormessage", "Invalid credentials");
         }
     }
+    
 
     // Register Post
 
@@ -268,12 +259,14 @@ class login_register extends Controller
                 window.location.href='/login'
                 </script>";
         } else {
+            $password = $res->passwordinput;
+
             $studcheck = new temp_verfy();
             $studcheck->email = $get_Email;
             $studcheck->first_name = $res->first_name;
             $studcheck->last_name = $res->last_name;
-            $studcheck->password = $res->passwordinput;
-
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $studcheck->password = $hashedPassword;
             $studcheck->contact_no = $res->contact;
             $studcheck->code = $v_code;
 
