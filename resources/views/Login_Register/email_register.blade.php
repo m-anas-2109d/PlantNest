@@ -1,3 +1,3 @@
 <p>
-    Hey their {{$data}} your are successfully register to Online Varsity.
+    Hey their {{$data}} your are successfully register to Plant Nest.
 </p>

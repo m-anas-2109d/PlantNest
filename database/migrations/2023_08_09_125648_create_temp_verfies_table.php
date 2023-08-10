@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('temp_verfies', function (Blueprint $table) {
             $table->id();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('contact_no' ,'1000')->nullable();
             $table->string('email')->nullable();
             $table->string('code')->nullable();
-            // $table->integer('password')->nullable();
+            $table->integer('password')->nullable();
             $table->integer("status")->nullable();
             // $table->date("date_of_complain")->format('dd/mm/yy')->nullable(); 
             $table->timestamps();

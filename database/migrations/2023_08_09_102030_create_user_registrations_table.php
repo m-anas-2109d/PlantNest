@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('password');
             $table->string('email');
-            $table->integer('contact_no');
+            $table->string('contact_no' , '1000');
             $table->integer('role');
-            $table->string('profile_image');
+            $table->string('profile_image')->nullable();;
             $table->timestamps();
         });
     }
